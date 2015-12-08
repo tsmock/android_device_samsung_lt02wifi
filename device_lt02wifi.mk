@@ -22,3 +22,29 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_lt02wifi
 PRODUCT_DEVICE := lt02wifi
+
+# Uevent files
+PRODUCT_COPY_FILES += \
+	device/samsung/lt02wifi/ueventd.pxa988.rc:root/ueventd.pxa988.rc
+
+# fstab
+PRODUCT_COPY_FILES += \
+	device/samsung/lt02wifi/fstab.pxa988:root/fstab.pxa988
+
+# Init files
+PRODUCT_COPY_FILES += \
+	device/samsung/lt02wifi/init.pxa988.rc:root/init.pxa988.rc \
+	device/samsung/lt02wifi/init.pxa988.sensor.rc:root/init.pxa988.sensor.rc \
+	device/samsung/lt02wifi/init.pxa988.tel.rc:root/init.pxa988.tel.rc \
+	device/samsung/lt02wifi/init.pxa988.usb.rc:root/init.pxa988.usb.rc \
+	device/samsung/lt02wifi/init.wifi.rc:root/init.wifi.rc
+
+# Actually tell it to use the uevent and init files we copied...
+PRODUCT_PACKAGES += \
+	fstab.pxa988 \
+	init.pxa988.rc \
+	init.pxa988.sensor.rc \
+	init.pxa988.tel.rc \
+	init.pxa988.usb.rc \
+	init.wifi.rc \
+	ueventd.pxa988.rc
