@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from armv7a-neon
--include device/generic/armv7a-neon/BoardConfig.mk
+-include device/generic/armv7-a-neon/BoardConfig.mk
 # inherit from the proprietary version
 -include vendor/samsung/lt02wifi/BoardConfigVendor.mk
 
