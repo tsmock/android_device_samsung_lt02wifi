@@ -2,6 +2,9 @@ USE_CAMERA_STUB := true
 
 # inherit from armv7a-neon
 -include device/generic/armv7-a-neon/BoardConfig.mk
+# Stuff for boot animation
+TARGET_SCREEN_WIDTH := 600
+TARGET_SCREEN_HEIGHT := 1024
 # inherit from cm tablet
 -include vendor/cm/config/common_full_tablet_wifionly.mk
 # inherit from the proprietary version
