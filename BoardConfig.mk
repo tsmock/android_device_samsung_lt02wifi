@@ -1,14 +1,16 @@
 USE_CAMERA_STUB := true
 
 # inherit from armv7a-neon
--include device/generic/armv7a-neon/BoardConfig.mk
+-include device/generic/armv7-a-neon/BoardConfig.mk
 # inherit from the proprietary version
 -include vendor/samsung/lt02wifi/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := mrvl
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := PXA986
+TARGET_NO_KERNEL := false
+TARGET_NO_BOOTLOADER := false
+TARGET_BOOTLOADER_BOARD_NAME := PXA988
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DMRVL_HARDWARE
@@ -23,6 +25,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12582912
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1507852288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5777653760
 BOARD_FLASH_BLOCK_SIZE := 512
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 TARGET_KERNEL_CONFIG := pxa986_lt02_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/lt02wifi
