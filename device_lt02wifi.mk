@@ -33,6 +33,7 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
+	device/samsung/lt02wifi/init.recovery.pxa988.rc:root/init.recovery.pxa988.rc \
 	device/samsung/lt02wifi/init.pxa988.rc:root/init.pxa988.rc \
 	device/samsung/lt02wifi/init.pxa988.sensor.rc:root/init.pxa988.sensor.rc \
 	device/samsung/lt02wifi/init.pxa988.tel.rc:root/init.pxa988.tel.rc \
@@ -42,6 +43,7 @@ PRODUCT_COPY_FILES += \
 # Actually tell it to use the uevent and init files we copied...
 PRODUCT_PACKAGES += \
 	fstab.pxa988 \
+	init.recovery.pxa988.rc \
 	init.pxa988.rc \
 	init.pxa988.sensor.rc \
 	init.pxa988.tel.rc \
