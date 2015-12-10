@@ -1,16 +1,11 @@
 USE_CAMERA_STUB := true
 
+# inherit from armv7a-neon
+-include device/generic/armv7a-neon/BoardConfig.mk
 # inherit from the proprietary version
 -include vendor/samsung/lt02wifi/BoardConfigVendor.mk
 
-TARGET_ARCH := arm
-TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := mrvl
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a9
-TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := PXA986
@@ -18,7 +13,7 @@ TARGET_BOOTLOADER_BOARD_NAME := PXA986
 # Flags
 COMMON_GLOBAL_CFLAGS += -DMRVL_HARDWARE
 
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive console=ttyS1 debug loglevel=7
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
