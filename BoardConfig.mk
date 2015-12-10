@@ -5,8 +5,6 @@ USE_CAMERA_STUB := true
 # Stuff for boot animation
 TARGET_SCREEN_WIDTH := 600
 TARGET_SCREEN_HEIGHT := 1024
-# inherit from cm tablet
--include vendor/cm/config/common_full_tablet_wifionly.mk
 # inherit from the proprietary version
 -include vendor/samsung/lt02wifi/BoardConfigVendor.mk
 
