@@ -31,6 +31,7 @@ BOARD_FLASH_BLOCK_SIZE := 512
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 TARGET_KERNEL_CONFIG := pxa986_lt02_defconfig
+TARGET_VARIANT_CONFIG := pxa986_lt02_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/lt02wifi
 TARGET_PREBUILT_KERNEL := device/samsung/lt02wifi/kernel
 
