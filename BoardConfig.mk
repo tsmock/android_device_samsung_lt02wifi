@@ -32,7 +32,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 TARGET_KERNEL_CONFIG := pxa986_lt02_defconfig
 TARGET_VARIANT_CONFIG := pxa986_lt02_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/lt02wifi
+TARGET_KERNEL_SOURCE := kernel/samsung/lt02
 TARGET_PREBUILT_KERNEL := device/samsung/lt02wifi/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
