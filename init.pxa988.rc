@@ -5,9 +5,9 @@ import init.wifi.rc
 on init
     loglevel 8
     setenforce 0
-    setprop ro.secure=0
-    setprop ro.adb.secure=0
-    setprop ro.debuggable=1
+    setprop ro.secure 0
+    setprop ro.adb.secure 0
+    setprop ro.debuggable 1
     start adbd
    # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/media_rw/extSdCard 0700 media_rw media_rw
@@ -44,6 +44,7 @@ on init
     export SECONDARY_STORAGE /storage/extSdCard
 
     mkdir /efs 0771 radio system
+    mkdir /preload 0700 root root
     mkdir /storage/extSdCard 0700 root root
     mkdir /storage/UsbDriveA 0700 root root
     mkdir /storage/UsbDriveB 0700 root root
@@ -72,18 +73,18 @@ on init
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/class/backlight/panel/auto_brightness
 
-    # for KeyLED	
+    # for KeyLED
     chown system system /sys/class/sec/sec_touchkey/brightness
     chmod 0664 /sys/class/sec/sec_touchkey/brightness
-    
-    # for TSP cmd	
+
+    # for TSP cmd
     chown system system /sys/class/sec/tsp/cmd
     chmod 0664 /sys/class/sec/tsp/cmd
 
 	# for touch key
     chown system system /sys/class/sec/sec_touchkey/touchkey_threshold
     chmod 0664 /sys/class/sec/sec_touchkey/touchkey_threshold
-	
+
     #mdnie
     chown system system /sys/class/lcd/panel/tuning
     chmod 0644 /sys/class/backlight/lcd/panel/tuning
@@ -96,8 +97,8 @@ on init
     chmod 0664 /sys/class/mdnie/mdnie/negative
     chown system system /sys/class/mdnie/mdnie/cabc
     chmod 0664 /sys/class/mdnie/mdnie/cabc
-    
-  
+
+
     #cpu
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
@@ -155,7 +156,7 @@ on init
     chown system system /proc/driver/pm800_headset
 
     #lcd for dip channel
-    chmod 664 /sys/devices/platform/pxa168-fb.0/lcd    
+    chmod 664 /sys/devices/platform/pxa168-fb.0/lcd
     chown system system /sys/devices/platform/pxa168-fb.0/lcd
 
     chmod 440 /sys/devices/platform/pxa168-fb.0/power/runtime_status
@@ -163,7 +164,7 @@ on init
 
     #cpu&ddr for dip channel
     chmod 664 /sys/devices/platform/devfreq-ddr/devfreq/devfreq-ddr/min_freq
-    chmod 664 /sys/devices/platform/devfreq-ddr/devfreq/devfreq-ddr/max_freq   
+    chmod 664 /sys/devices/platform/devfreq-ddr/devfreq/devfreq-ddr/max_freq
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/platform/devfreq-ddr/devfreq/devfreq-ddr/min_freq
@@ -261,7 +262,7 @@ on post-fs
 
     chown radio system /efs
     chmod 0771 /efs
-    
+
     symlink /dev/block/mmcblk0p7 /dev/block/param
 
 on post-fs-data
@@ -321,10 +322,10 @@ on property:persist.sys.tools.enable=0
 
 
 #on property:persist.sys.storage_preload=0
-#    start umount_service 
+#    start umount_service
 
 on fs
-  
+
 # virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard -u 1023 -g 1023  -d -l -r /data/media /mnt/shell/emulated
     class late_start
@@ -384,17 +385,17 @@ service sensord /system/bin/sensord
 #    class main
 #    user root
 #    group system radio inet net_raw
- 
+
 #service KIES-daemon /system/bin/kiesexe
 #    class main
 #    user root
 #    group system radio inet net_raw
- 
+
 #service SMD-daemon /system/bin/smdexe
 #    class main
 #    user root
 #    group system radio inet net_raw
- 
+
 #service DTT-daemon /system/bin/dttexe
 #    class main
 #    user root
@@ -404,7 +405,7 @@ service sensord /system/bin/sensord
 #    class main
 #    user root
 #    group system radio inet net_raw
-     
+
 #service mobex-daemon /system/bin/npsmobex
 #    class main
 #    user system
