@@ -38,7 +38,8 @@ PRODUCT_COPY_FILES += \
 	device/samsung/lt02wifi/init.pxa988.sensor.rc:root/init.pxa988.sensor.rc \
 	device/samsung/lt02wifi/init.pxa988.tel.rc:root/init.pxa988.tel.rc \
 	device/samsung/lt02wifi/init.pxa988.usb.rc:root/init.pxa988.usb.rc \
-	device/samsung/lt02wifi/init.wifi.rc:root/init.wifi.rc
+	device/samsung/lt02wifi/init.wifi.rc:root/init.wifi.rc \
+	device/samsung/lt02wifi/lpm.rc:root/lpm.rc
 
 # Actually tell it to use the uevent and init files we copied...
 PRODUCT_PACKAGES += \
@@ -49,4 +50,5 @@ PRODUCT_PACKAGES += \
 	init.pxa988.tel.rc \
 	init.pxa988.usb.rc \
 	init.wifi.rc \
-	ueventd.pxa988.rc
+	ueventd.pxa988.rc \
+	lpm.rc
