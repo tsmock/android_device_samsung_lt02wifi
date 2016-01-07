@@ -33,10 +33,10 @@
 ##
 ##
 /dev/block/platform/sdhci-pxav3.2/by-name/SYSTEM	/system		ext4	ro,noatime	wait
-/dev/block/platform/sdhci-pxav3.2/by-name/HIDDEN	/preload	ext4	ro		0 0
+/dev/block/platform/sdhci-pxav3.2/by-name/HIDDEN	/preload	ext4	ro		wait
 /dev/block/platform/sdhci-pxav3.2/by-name/EFS		/efs		ext4	noatime,nosuid,nodev,journal_async_commit,errors=panic	wait,check
 /dev/block/platform/sdhci-pxav3.2/by-name/CACHE		/cache		ext4	noatime,nosuid,nodev,journal_async_commit,errors=panic	wait,check
-/dev/block/platform/sdhci-pxav3.2/by-name/NVM		/NVM		ext4	rw,seclabel,nosuid,nodev,relatime,nodelalloc,noauto_da_alloc,data=ordered	0 0
+##/dev/block/platform/sdhci-pxav3.2/by-name/NVM		/NVM		ext4	rw,seclabel,nosuid,nodev,relatime,nodelalloc,noauto_da_alloc,data=ordered	wait
 
 # Unmounted partitions, some may work, some may not. Kernel/recovery should.
 /dev/block/platform/sdhci-pxav3.2/by-name/KERNEL	/boot		emmc	defaults	defaults
