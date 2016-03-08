@@ -31,7 +31,8 @@ BOARD_FLASH_BLOCK_SIZE := 512
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 #TARGET_GCC_VERSION := 4.6
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := /run/media/vorpalblade/83849908-bca6-44d0-9dfe-b2196bc4dd75/workspace/cyanogenmod/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
+# The samsung kernel MUST be build with GCC v4.6
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := /run/media/vorpalblade/83849908-bca6-44d0-9dfe-b2196bc4dd75/workspace/cyanogenmod/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 #TARGET_KERNEL_CONFIG := pxa986_lt02wifiue_defconfig
 #TARGET_KERNEL_CONFIG := pxa986_lt02wifi_werewolf_defconfig
 TARGET_KERNEL_CONFIG := pxa986_lt02_defconfig
